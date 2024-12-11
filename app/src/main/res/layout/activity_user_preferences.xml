@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UserPreferencesActivity">
+
+    <include
+        android:id="@+id/header"
+        layout="@layout/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"/>
+
+    <TextView
+        android:id="@+id/textBox2"
+        android:layout_width="150dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="168dp"
+        android:layout_marginTop="33dp"
+        android:layout_marginEnd="168dp"
+        android:gravity="center"
+        android:text="User Details"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textBox3"
+        android:layout_width="123dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="255dp"
+        android:layout_marginEnd="272dp"
+        android:layout_marginBottom="431dp"
+        android:gravity="center"
+        android:text="First Name:"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textBox4"
+        android:layout_width="123dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="331dp"
+        android:layout_marginEnd="272dp"
+        android:layout_marginBottom="355dp"
+        android:gravity="center"
+        android:text="Last Name:"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textBox5"
+        android:layout_width="123dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="408dp"
+        android:layout_marginEnd="272dp"
+        android:layout_marginBottom="278dp"
+        android:gravity="center"
+        android:text="Email Address:"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="95dp"
+        android:layout_height="148dp"
+        android:layout_marginStart="146dp"
+        android:layout_marginTop="110dp"
+        android:layout_marginEnd="137dp"
+        android:layout_marginBottom="511dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/chruchill"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textBox7"
+        android:layout_width="199dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="163dp"
+        android:layout_marginTop="255dp"
+        android:layout_marginEnd="49dp"
+        android:layout_marginBottom="428dp"
+        android:gravity="center"
+        android:text="Winston"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textBox8"
+        android:layout_width="199dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="163dp"
+        android:layout_marginTop="331dp"
+        android:layout_marginEnd="49dp"
+        android:layout_marginBottom="352dp"
+        android:gravity="center"
+        android:text="Chruchill"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/textBox9"
+        android:layout_width="199dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="163dp"
+        android:layout_marginTop="408dp"
+        android:layout_marginEnd="49dp"
+        android:layout_marginBottom="275dp"
+        android:gravity="center"
+        android:text="wc@uk.com"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
