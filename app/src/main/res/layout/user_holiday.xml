@@ -7,14 +7,15 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="216dp"
+        android:layout_width="291dp"
         android:layout_height="49dp"
         android:layout_marginStart="141dp"
         android:layout_marginTop="35dp"
         android:layout_marginEnd="141dp"
         android:layout_marginBottom="646dp"
-        android:text="User Holiday Request"
-        android:textSize="22dp"
+        android:text="@string/user_holidayTitle"
+        android:textSize="22sp"
+        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -25,25 +26,27 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="37dp"
-        android:layout_marginTop="139dp"
+        android:layout_marginTop="267dp"
         android:layout_marginEnd="25dp"
         android:layout_marginBottom="41dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="184dp"
         android:layout_height="64dp"
-        android:layout_marginStart="113dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginStart="118dp"
+        android:layout_marginTop="54dp"
         android:layout_marginEnd="114dp"
         android:layout_marginBottom="139dp"
-        android:text="Holiday Request"
+        android:text="@string/user_btnHolidayRequest"
         app:layout_constraintBottom_toTopOf="@+id/calendarView"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 

@@ -30,4 +30,7 @@
     <string name="details_lastName">Last Name</string>
     <string name="details_emailAddress">Email Address</string>
 
+    <string name="user_holidayTitle">User Holiday Requests</string>
+    <string name="user_btnHolidayRequest">Holiday Request</string>
+
 </resources>
