@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
         btnUserHoliday.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, user_holiday.class);
+                Intent intent = new Intent(MainActivity.this, userHoliday.class);
                 startActivity(intent);
             }
         });
