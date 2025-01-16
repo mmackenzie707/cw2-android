@@ -6,6 +6,8 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 import android.widget.Toolbar;
 
 import androidx.activity.EdgeToEdge;
@@ -22,44 +24,53 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
 
+    EditText username, password;
+    Button login, register;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.textBox), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
-        
 
-        Button btnUserDetails = findViewById(R.id.userDetails);
-        btnUserDetails.setOnClickListener(new View.OnClickListener() {
+        username = findViewById(R.id.editTextUser);
+        password = findViewById(R.id.editTextPass);
+        login = findViewById(R.id.buttonLogin);
+        register = findViewById(R.id.buttonRegister);
+
+        login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, UserPreferencesActivity.class);
-                startActivity(intent);
+                if (username != null && password != null) {
+                    User user = UserStorage.getInstance().getUser(username.getText().toString());
+                    if (user != null && user.password.equals(password.getText().toString())) {
+                        if (user.getRole().equals("Admin")) {
+                            String value = "Welcome, admin!";
+                            Intent i = new Intent(MainActivity.this, AdminActivity.class);
+                            i.putExtra("message", value);
+                            startActivity(i);
+                        } else {
+                            String value = "Welcome, regular user!";
+                            Intent i = new Intent(MainActivity.this, RegularUserActivity.class);
+                            i.putExtra("message", value);
+                            startActivity(i);
+                        }
+                    } else {
+                        Toast.makeText(MainActivity.this, "Invalid Details",
+                                Toast.LENGTH_SHORT).show();
+                    }
+                } else {
+                    Toast.makeText(MainActivity.this, "Username or Password is null",
+                            Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
-        Button btnUserHoliday = findViewById(R.id.userHoliday);
-        btnUserHoliday.setOnClickListener(new View.OnClickListener() {
+        register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, userHoliday.class);
+                Intent intent = new Intent(MainActivity.this, RegistrationActivity.class);
                 startActivity(intent);
             }
         });
-
-        Button btnUserSettings = findViewById(R.id.userSettings);
-        btnUserSettings.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, SettingsActivity.class);
-                startActivity(intent);
-            }
-        });
-
     }
 }

@@ -33,4 +33,9 @@
     <string name="user_holidayTitle">User Holiday Requests</string>
     <string name="user_btnHolidayRequest">Holiday Request</string>
 
+    <!--Login/Logout Text Resources -->
+    <string name="button_logout">Logout</string>
+    <string name="logoutbox_title">Confirmation PopUp!</string>
+    <string name="logoutbox_alert1">You sure, that you want to logout?</string>
+
 </resources>
