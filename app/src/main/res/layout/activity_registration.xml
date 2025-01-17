@@ -1,34 +1,92 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@color/background_color">
 
     <EditText
-        android:id="@+id/editTextNewUser"
+        android:id="@+id/editTextFirstName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Username" />
+        android:hint="First Name"
+        android:padding="12dp"
+        android:background="@drawable/edit_text_background"
+        android:layout_marginBottom="8dp" />
 
     <EditText
-        android:id="@+id/editTextNewPass"
+        android:id="@+id/editTextLastName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Password"
-        android:layout_below="@id/editTextNewUser" />
+        android:hint="Last Name"
+        android:padding="12dp"
+        android:background="@drawable/edit_text_background"
+        android:layout_marginBottom="16dp" />
 
-    <EditText
-        android:id="@+id/editTextUserType"
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="User Type (Admin/Regular)"
-        android:layout_below="@id/editTextNewPass" />
+        android:paddingTop="16dp"
+        android:paddingBottom="8dp"
+        android:text="Please enter a new pin"
+        android:textSize="16sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="16dp">
+
+        <EditText
+            android:id="@+id/pin_digit_1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:inputType="numberPassword"
+            android:maxLength="1"
+            android:padding="12dp"
+            android:background="@drawable/edit_text_background"
+            android:layout_marginEnd="4dp" />
+
+        <EditText
+            android:id="@+id/pin_digit_2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:inputType="numberPassword"
+            android:maxLength="1"
+            android:padding="12dp"
+            android:background="@drawable/edit_text_background"
+            android:layout_marginEnd="4dp" />
+
+        <EditText
+            android:id="@+id/pin_digit_3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:inputType="numberPassword"
+            android:maxLength="1"
+            android:padding="12dp"
+            android:background="@drawable/edit_text_background"
+            android:layout_marginEnd="4dp" />
+
+        <EditText
+            android:id="@+id/pin_digit_4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:inputType="numberPassword"
+            android:maxLength="1"
+            android:padding="12dp"
+            android:background="@drawable/edit_text_background" />
+    </LinearLayout>
 
     <Button
         android:id="@+id/buttonSubmit"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Submit"
-        android:layout_below="@id/editTextUserType"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp" />
-</RelativeLayout>
+        android:padding="12dp"
+        android:background="@drawable/button_background"
+        android:textColor="@android:color/white" />
+</LinearLayout>

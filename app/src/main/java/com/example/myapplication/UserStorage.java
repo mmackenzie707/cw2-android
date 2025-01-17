@@ -18,10 +18,14 @@ public class UserStorage {
     }
 
     public void addUser(User user) {
-        users.put(user.username, user);
+        users.put(user.getUsername(), user);
     }
 
     public User getUser(String username) {
         return users.get(username);
+    }
+
+    public void updateUser(User user) {
+        users.put(user.getUsername(), user);
     }
 }

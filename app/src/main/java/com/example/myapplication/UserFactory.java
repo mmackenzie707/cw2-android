@@ -1,13 +1,27 @@
 package com.example.myapplication;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class UserFactory {
 
-    public static User createUser(String type, String username, String password) {
-        if (type.equalsIgnoreCase("Admin")) {
-            return new AdminUser(username, password);
-        } else if (type.equalsIgnoreCase("Regular")) {
-            return new RegularUser(username, password);
+    private static List<User> users = new ArrayList<>();
+
+    public static String createUsername(String firstName, String lastName) {
+        return firstName.toLowerCase() + "." + lastName.toLowerCase();
+    }
+
+    public static User createUser(String username, String pin) {
+        User user = new User(username, pin);
+        users.add(user);
+        return user;
+    }
+
+    public static List<String> getUserList() {
+        List<String> userList = new ArrayList<>();
+        for (User user : users) {
+            userList.add(user.getUsername());
         }
-        return null;
+        return userList;
     }
 }
