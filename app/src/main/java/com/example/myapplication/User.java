@@ -5,17 +5,21 @@ public class User {
     private String lastName;
     private String username;
     private String pin;
+    private String role;
 
-    public User(String firstName, String lastName, String username, String pin) {
-        this.firstName = firstName;
-        this.lastName = lastName;
+    public User(String username, String pin, String role) {
+        if (username == null || pin == null || role == null) {
+            throw new IllegalArgumentException("Username, PIN, and role cannot be null");
+        }
         this.username = username;
         this.pin = pin;
+        this.role = role;
     }
 
     public User(String username, String pin) {
         this.username = username;
         this.pin = pin;
+        this.role = role;
     }
 
     public String getFirstName() {
@@ -40,5 +44,9 @@ public class User {
 
     public String getPin() {
         return pin;
+    }
+
+    public String getRole(){
+        return role;
     }
 }

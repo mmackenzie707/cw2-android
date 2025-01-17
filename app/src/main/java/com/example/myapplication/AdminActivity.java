@@ -2,6 +2,7 @@ package com.example.myapplication;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -30,10 +31,18 @@ public class AdminActivity extends AppCompatActivity {
         userMaintenanceButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                userList = UserFactory.getUserList(); // Assuming UserFactory has a method to get the list of users
-                userAdapter = new ArrayAdapter<>(AdminActivity.this, android.R.layout.simple_list_item_1, userList);
-                userListView.setAdapter(userAdapter);
-                userListView.setVisibility(View.VISIBLE);
+                try {
+                    userList = UserFactory.getUserList(); // Assuming UserFactory has a method to get the list of users
+                    if (userList == null) {
+                        throw new NullPointerException("User list is null");
+                    }
+                    userAdapter = new ArrayAdapter<>(AdminActivity.this, android.R.layout.simple_list_item_1, userList);
+                    userListView.setAdapter(userAdapter);
+                    userListView.setVisibility(View.VISIBLE);
+                } catch (Exception e) {
+                    Log.e("AdminActivity", "Error setting user list", e);
+                    Toast.makeText(AdminActivity.this, "Error loading user list", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }

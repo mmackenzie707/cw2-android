@@ -1,8 +1,5 @@
 package com.example.myapplication;
 
-import static androidx.core.content.ContextCompat.startActivity;
-
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -15,7 +12,8 @@ public class RegistrationActivity extends AppCompatActivity {
 
     EditText firstName, lastName;
     EditText[] pinDigits;
-    Button submit, adminButton;
+    Button submit;
+    StringBuilder pinBuilder = new StringBuilder();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,43 +29,37 @@ public class RegistrationActivity extends AppCompatActivity {
                 findViewById(R.id.pin_digit_4)
         };
         submit = findViewById(R.id.buttonSubmit);
-        adminButton = findViewById(R.id.buttonAdmin);
+
+        setupPinPad();
 
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String firstNameInput = firstName.getText().toString();
                 String lastNameInput = lastName.getText().toString();
-                StringBuilder pinBuilder = new StringBuilder();
-                for (EditText pinDigit : pinDigits) {
-                    pinBuilder.append(pinDigit.getText().toString());
-                }
-                String pin = pinBuilder.toString();
+                String pinInput = pinBuilder.toString();
 
-                if (!firstNameInput.isEmpty() && !lastNameInput.isEmpty() && pin.length() == 4) {
+                if (!firstNameInput.isEmpty() && !lastNameInput.isEmpty() && pinInput.length() == 4) {
                     String username = UserFactory.createUsername(firstNameInput, lastNameInput);
-                    User newUser = UserFactory.createUser(username, pin);
+                    User newUser = UserFactory.createUser(username, pinInput);
 
                     // Handle the new user (e.g., save to database, display a message, etc.)
-                    Toast.makeText(RegistrationActivity.this, "User created: " + newUser.getUsername(), Toast.LENGTH_SHORT).show();
-
-                    // Navigate back to MainActivity or another appropriate activity
-                    Intent intent = new Intent(RegistrationActivity.this, MainActivity.class);
-                    startActivity(intent);
-                    finish();
+                    Toast.makeText(RegistrationActivity.this, "User created: " + username, Toast.LENGTH_SHORT).show();
+                    finish(); // Close the activity after registration
                 } else {
                     Toast.makeText(RegistrationActivity.this, "Please fill in all fields", Toast.LENGTH_SHORT).show();
-                    Toast.makeText(RegistrationActivity.this, "Registration Failed", Toast.LENGTH_SHORT).show();
                 }
             }
         });
+    }
 
-        adminButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(RegistrationActivity.this, AdminActivity.class);
-                startActivity(intent);
-            }
-        });
+    private void setupPinPad() {
+        for (EditText pinDigit : pinDigits) {
+            pinDigit.setOnKeyListener((v, keyCode, event) -> {
+                pinBuilder.setLength(0); // Clear the pinBuilder before appending new text
+                pinBuilder.append(((EditText) v).getText().toString());
+                return false;
+            });
+        }
     }
 }
