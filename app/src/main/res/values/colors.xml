@@ -4,14 +4,19 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="colorAccents">#FF000000</color>
-    <color name="PrimaryColor">#FF000000</color>
+    <color name="PrimaryColor">#D32F2F</color>
+    <color name="PrimaryDarkColor">#B71C1C</color>
+    <color name="AccentColor">#FFCDD2</color>
+    <color name="TextColor">#FFFFFF</color>
 
+    
     <!-- Registration Page Colors -->
     <color name="background_color">#F5F5F5</color>
     <color name="text_color">#333333</color>
     <color name="border_color">#CCCCCC</color>
     <color name="button_color">#3F51B5</color>
     <color name="button_pressed_color">#303F9F</color>
+
 
 
 </resources>

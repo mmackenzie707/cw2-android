@@ -3,28 +3,32 @@ package com.example.myapplication;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
-import com.google.android.material.appbar.CollapsingToolbarLayout;
+
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.example.myapplication.R;
+
+import java.util.Arrays;
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText editTextUser;
-    EditText[] pinDigits;
-    Button buttonLogin, buttonRegister;
-    Button[] pinPadButtons;
-    StringBuilder pinBuilder = new StringBuilder();
-    int currentPinIndex = 0;
+    private EditText editTextUser;
+    private EditText pinDigit1, pinDigit2, pinDigit3, pinDigit4;
+    private Button[] pinPadButtons;
+    private EditText[] pinDigits;
+    private final StringBuilder pinBuilder = new StringBuilder();
+    private int currentPinIndex = 0;
+    private User currentUser;
+
+    private static final int NAV_HOME = R.id.navigation_home;
+    private static final int NAV_DASHBOARD = R.id.navigation_dashboard;
+    private static final int NAV_NOTIFICATIONS = R.id.navigation_notifications;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,15 +36,17 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         editTextUser = findViewById(R.id.editTextUser);
-        pinDigits = new EditText[]{
-                findViewById(R.id.pin_digit_1),
-                findViewById(R.id.pin_digit_2),
-                findViewById(R.id.pin_digit_3),
-                findViewById(R.id.pin_digit_4)
-        };
-        buttonLogin = findViewById(R.id.buttonLogin);
-        buttonRegister = findViewById(R.id.buttonRegister);
+        pinDigit1 = findViewById(R.id.pin_digit_1);
+        pinDigit2 = findViewById(R.id.pin_digit_2);
+        pinDigit3 = findViewById(R.id.pin_digit_3);
+        pinDigit4 = findViewById(R.id.pin_digit_4);
+        Button buttonLogin = findViewById(R.id.buttonLogin);
+        Button buttonRegister = findViewById(R.id.buttonRegister);
 
+        // Initialize pinDigits array
+        pinDigits = new EditText[]{pinDigit1, pinDigit2, pinDigit3, pinDigit4};
+
+        // Initialize pinPadButtons array
         pinPadButtons = new Button[]{
                 findViewById(R.id.button0),
                 findViewById(R.id.button1),
@@ -60,22 +66,59 @@ public class MainActivity extends AppCompatActivity {
         buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String usernameInput = editTextUser.getText().toString();
-                String pinInput = pinBuilder.toString();
+                String username = editTextUser.getText().toString();
+                String pin = pinDigit1.getText().toString() + pinDigit2.getText().toString() +
+                        pinDigit3.getText().toString() + pinDigit4.getText().toString();
 
-                // Log inputs for debugging
-                Log.d("MainActivity", "Username: " + usernameInput);
-                Log.d("MainActivity", "PIN: " + pinInput);
+                Log.d("MainActivity", "Username: " + username + ", PIN: " + pin);
 
-                if (!usernameInput.isEmpty() && pinInput.length() == 4) {
-                    if (UserFactory.validateUser(usernameInput, pinInput)) {
-                        Toast.makeText(MainActivity.this, "Login successful", Toast.LENGTH_SHORT).show();
+                if (UserFactory.validateUser(username, pin)) {
+                    currentUser = UserFactory.getUser(username); // Set currentUser after successful login
+                    if (currentUser != null) {
+                        if (currentUser.isAdmin()) {
+                            // Navigate to Admin Dashboard
+                            Intent intent = new Intent(MainActivity.this, AdminUsersPage.class);
+                            startActivity(intent);
+                        } else {
+                            // Navigate to Employee Dashboard
+                            Intent intent = new Intent(MainActivity.this, EmployeeDashboardActivity.class);
+                            startActivity(intent);
+                        }
                     } else {
-                        Toast.makeText(MainActivity.this, "Incorrect username or PIN", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MainActivity.this, "User not found", Toast.LENGTH_SHORT).show();
                     }
                 } else {
-                    Toast.makeText(MainActivity.this, "Please fill in all fields", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Invalid credentials", Toast.LENGTH_SHORT).show();
                 }
+            }
+        });
+
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+                    case NAV_HOME:
+                        // Handle home action
+                        return true;
+                    case NAV_DASHBOARD:
+                        if (currentUser != null) {
+                            if (currentUser.isAdmin()) {
+                                // Navigate to Admin Dashboard
+                                Intent intent = new Intent(MainActivity.this, AdminUsersPage.class);
+                                startActivity(intent);
+                            } else {
+                                // Navigate to Employee Dashboard
+                                Intent intent = new Intent(MainActivity.this, EmployeeDashboardActivity.class);
+                                startActivity(intent);
+                            }
+                        }
+                        return true;
+                    case NAV_NOTIFICATIONS:
+                        // Handle notifications action
+                        return true;
+                }
+                return false;
             }
         });
 
