@@ -11,6 +11,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
 import java.util.List;
 
 public class AdminActivity extends AppCompatActivity {
@@ -27,6 +29,8 @@ public class AdminActivity extends AppCompatActivity {
 
         userListView = findViewById(R.id.userListView);
         userMaintenanceButton = findViewById(R.id.buttonAdmin);
+        Button logoutButton = findViewById(R.id.logoutButton);
+        Button employeeSubmitButton = findViewById(R.id.buttonEmployeeSubmit);
 
         userMaintenanceButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,5 +49,30 @@ public class AdminActivity extends AppCompatActivity {
                 }
             }
         });
+
+        logoutButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                LogoutUtils.logout(AdminActivity.this);
+            }
+        });
+
+        employeeSubmitButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AdminActivity.this, EmployeeActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        // Setup bottom navigation
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
+        User currentUser = getCurrentUser();
+        NavigationUtils.setupBottomNavigationView(this, bottomNavigationView, currentUser);
+    }
+
+    private User getCurrentUser() {
+        UserSessionManager sessionManager = new UserSessionManager(this);
+        return sessionManager.getCurrentUser();
     }
 }

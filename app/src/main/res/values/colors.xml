@@ -11,12 +11,21 @@
 
     
     <!-- Registration Page Colors -->
-    <color name="background_color">#F5F5F5</color>
-    <color name="text_color">#333333</color>
+    <color name="regbackground_color">#F5F5F5</color>
+    <color name="regtext_color">#333333</color>
     <color name="border_color">#CCCCCC</color>
     <color name="button_color">#3F51B5</color>
     <color name="button_pressed_color">#303F9F</color>
 
-
+    <!-- Activity Admin Users Page Colors -->
+    <color name="admiusersbackground_color">#FFFFFF</color>
+    <color name="adminuserstext_color">#000000</color>
+    <color name="adminuserstext_secondary_color">#757575</color>
+    <color name="divider_color">#CCCCCC</color>
+    <color name="list_background_color">#F9F9F9</color>
+    <color name="list_item_background_color">#FFFFFF</color>
+    <color name="bottom_nav_background_color">#FFFFFF</color>
+    <color name="bottom_nav_icon_color">#FF5722</color>
+    <color name="bottom_nav_text_color">#FF5722</color>
 
 </resources>

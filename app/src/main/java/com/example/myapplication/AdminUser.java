@@ -1,7 +1,6 @@
 package com.example.myapplication;
 
 import java.util.Collections;
-import java.util.List;
 
 public class AdminUser extends User {
 
@@ -10,7 +9,7 @@ public class AdminUser extends User {
     }
 
     @Override
-    public List<String> getRole() {
-        return Collections.singletonList("Admin");
+    public String getRole() {
+        return Collections.singletonList("Admin").toString();
     }
 }

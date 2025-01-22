@@ -41,7 +41,8 @@ public class RegistrationActivity extends AppCompatActivity {
 
                 if (!firstNameInput.isEmpty() && !lastNameInput.isEmpty() && pinInput.length() == 4) {
                     String username = UserFactory.createUsername(firstNameInput, lastNameInput);
-                    User newUser = UserFactory.createUser(username, pinInput);
+                    boolean isAdmin = false; // or true, based on your logic
+                    User newUser = UserFactory.createUser(username, pinInput, isAdmin);
 
                     // Handle the new user (e.g., save to database, display a message, etc.)
                     Toast.makeText(RegistrationActivity.this, "User created: " + username, Toast.LENGTH_SHORT).show();

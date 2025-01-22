@@ -33,7 +33,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".UserDetailsActivity" />
-        <activity android:name=".Logout" />
         <activity android:name=".AdminActivity" />
         <activity android:name=".RegistrationActivity" />
         <activity android:name=".RegularUserActivity" />

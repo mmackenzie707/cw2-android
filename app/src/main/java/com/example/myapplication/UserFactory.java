@@ -32,11 +32,9 @@ public class UserFactory {
         return null;
     }
 
-    public static User createUser(String username, String pin) {
-        if (username == null || pin == null) {
-            throw new IllegalArgumentException("Username and PIN cannot be null");
-        }
-        User user = new User(username, pin, false);
+    public static User createUser(String username, String pin, boolean isAdmin) {
+        List<String> roles = isAdmin ? Arrays.asList("ADMIN") : Arrays.asList("USER");
+        User user = new User(username, pin, roles);
         users.add(user);
         return user;
     }
