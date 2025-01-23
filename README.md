@@ -3,7 +3,8 @@
 This program handles Employee and Administrator data, splitting the two responsibilities using a UserFactory.java class after the initial registration. When an employee initially regissters, they will be automatically placed in the employee bin, only then can the administrator grant administrative permissions to the user.
 
 How to Use:
-_Employees__
+
+_Employees_
 1. Inital launch you will be presented with a logon screen, with two (2) buttons, press the register button
 2. After pressing the register button you will be presented with the register screen, this will present you will the following information
    a) First Name
@@ -19,6 +20,12 @@ _Administrators_
    b) Holiday Management - this page will give you the ability to manage employee holiday requests
    c) Notification Center - management of notifications
 
-Conding Contributors
+_Test Administrator Credentials_
+
+Username: admin
+
+Password: 1234
+
+Coding Contributors
 =====================
 Login/Logout Fragments - **https://mycurlycode.blogspot.com/2017/04/login-logout-features-in-android.html**
