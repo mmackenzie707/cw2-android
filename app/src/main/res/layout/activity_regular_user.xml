@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="24dp"
-        android:text="Employee Dashboard"
+        android:text="@string/arutext_title"
         android:textSize="24sp"
         android:textStyle="bold"
         android:visibility="visible" />
@@ -28,27 +28,27 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
-            android:text="User Preferences" />
+            android:text="@string/arutext_userpreferences" />
 
         <Button
             android:id="@+id/reguserbtn_holiday"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
-            android:text="Holiday Center" />
+            android:text="@string/arutext_holidaycenter" />
 
         <Button
             android:id="@+id/reguserbtn_notificationcenter"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
-            android:text="Notification Center" />
+            android:text="@string/arutext_notificationcenter" />
 
         <Button
             android:id="@+id/logoutButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Logout" />
+            android:text="@string/button_logout" />
     </LinearLayout>
 
 </RelativeLayout>

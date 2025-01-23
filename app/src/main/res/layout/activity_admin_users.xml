@@ -9,7 +9,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="User List"
+        android:text="@string/aautext_userlist"
         android:textSize="24sp"
         android:textStyle="bold"
         android:paddingBottom="16dp"

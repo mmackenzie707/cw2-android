@@ -30,7 +30,7 @@ public class UserDetailsActivity extends AppCompatActivity {
         firstNameEditText = findViewById(R.id.firstNameEditText);
         lastNameEditText = findViewById(R.id.lastNameEditText);
         usernameTextView = findViewById(R.id.usernameTextView);
-        pinTextView = findViewById(R.id.pinTextView);
+        pinTextView = findViewById(R.id.pinEditText);
         imageViewProfilePhoto = findViewById(R.id.imageViewProfilePhoto);
         buttonTakePhoto = findViewById(R.id.buttonTakePhoto);
         buttonEdit = findViewById(R.id.buttonEdit);

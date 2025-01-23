@@ -1,78 +1,108 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:padding="16dp">
 
-    <ImageView
-        android:id="@+id/imageViewProfilePhoto"
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
-        android:scaleType="centerCrop"
-        android:contentDescription="Profile Photo"
-        android:src="@drawable/ic_profile_placeholder" />
+        app:cardCornerRadius="8dp"
+        app:cardElevation="4dp">
+
+        <ImageView
+            android:id="@+id/imageViewProfilePhoto"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:contentDescription="@string/audprof_profilephoto"
+            android:src="@drawable/ic_profile_placeholder" />
+    </androidx.cardview.widget.CardView>
 
     <EditText
         android:id="@+id/firstNameEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="First Name"
+        android:hint="@string/aud_fnint"
         android:textSize="18sp"
-        android:paddingBottom="8dp"
-        android:enabled="false" />
+        android:padding="12dp"
+        android:background="@drawable/edit_text_background"
+        android:enabled="false"
+        android:layout_marginBottom="8dp" />
 
     <EditText
         android:id="@+id/lastNameEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Last Name"
+        android:hint="@string/aud_lnint"
         android:textSize="18sp"
-        android:paddingBottom="8dp"
-        android:enabled="false" />
+        android:padding="12dp"
+        android:background="@drawable/edit_text_background"
+        android:enabled="false"
+        android:layout_marginBottom="8dp" />
 
     <TextView
         android:id="@+id/usernameTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Username: "
+        android:text="@string/aud_unint"
         android:textSize="18sp"
-        android:paddingBottom="8dp" />
+        android:padding="12dp"
+        android:layout_marginBottom="8dp" />
 
-    <TextView
-        android:id="@+id/pinTextView"
+    <EditText
+        android:id="@+id/pinEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="PIN: "
+        android:hint="@string/aud_pinint"
         android:textSize="18sp"
         android:inputType="textPassword"
-        android:paddingBottom="8dp" />
+        android:padding="12dp"
+        android:layout_marginBottom="8dp"
+        android:enabled="false"/>
 
     <Button
         android:id="@+id/buttonTakePhoto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Take Photo"
-        android:layout_marginTop="16dp" />
+        android:text="@string/audbtn_photoTake"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/button_background"
+        android:textColor="@android:color/white" />
 
     <Button
         android:id="@+id/buttonEdit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Edit"
-        android:layout_marginTop="16dp" />
+        android:text="@string/audbtn_edit"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/button_background"
+        android:textColor="@android:color/white" />
 
     <Button
         android:id="@+id/buttonResetPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Reset Password"
-        android:layout_marginTop="16dp" />
+        android:text="@string/audbtn_resetPassword"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/button_background"
+        android:textColor="@android:color/white" />
 
     <Button
         android:id="@+id/buttonBack"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Back to Dashboard"
+        android:text="@string/audbtn_backDash"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/button_background"
+        android:textColor="@android:color/white" />
+
+    <FrameLayout
+        android:id="@+id/settings"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_marginTop="16dp" />
+
 </LinearLayout>

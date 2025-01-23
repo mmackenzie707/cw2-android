@@ -7,7 +7,7 @@
         android:id="@+id/header_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Please Enter Login Details!"
+        android:text="@string/header_title"
         android:textColor="@color/TextColor"
         android:textSize="24sp"
         android:textStyle="bold"

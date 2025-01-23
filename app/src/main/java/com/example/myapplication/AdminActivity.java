@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -22,21 +23,23 @@ public class AdminActivity extends AppCompatActivity {
     List<String> userList;
     Button userMaintenanceButton;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin);
 
         userListView = findViewById(R.id.userListView);
-        userMaintenanceButton = findViewById(R.id.buttonAdmin);
+        userMaintenanceButton = findViewById(R.id.adminbtn_holidayCenter);
         Button logoutButton = findViewById(R.id.logoutButton);
         Button employeeSubmitButton = findViewById(R.id.buttonEmployeeSubmit);
+        Button adminSettingsButton = findViewById(R.id.adminbtn_adminprofile);
 
         userMaintenanceButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 try {
-                    userList = UserFactory.getUserList(); // Assuming UserFactory has a method to get the list of users
+                    userList = UserFactory.getUserList();
                     if (userList == null) {
                         throw new NullPointerException("User list is null");
                     }
@@ -61,6 +64,14 @@ public class AdminActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(AdminActivity.this, EmployeeActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        adminSettingsButton.setOnClickListener(new View.OnClickListener() { // New OnClickListener
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AdminActivity.this, AdminSettingsActivity.class); // Assuming AdminSettingsActivity is your target activity
                 startActivity(intent);
             }
         });

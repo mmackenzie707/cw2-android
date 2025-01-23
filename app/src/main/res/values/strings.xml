@@ -33,6 +33,25 @@
     <string name="user_holidayTitle">User Holiday Requests</string>
     <string name="user_btnHolidayRequest">Holiday Request</string>
 
+    <!-- Activity_Main -->
+    <string name="text_num0">0</string>
+    <string name="text_num1">1</string>
+    <string name="text_num2">2</string>
+    <string name="text_num3">3</string>
+    <string name="text_num4">4</string>
+    <string name="text_num5">5</string>
+    <string name="text_num6">6</string>
+    <string name="text_num7">7</string>
+    <string name="text_num8">8</string>
+    <string name="text_num9">9</string>
+    <string name="text_delete">Delete</string>
+
+    <!-- activity_registration-->
+    <string name="text_fnhint">First Name</string>
+    <string name="text_lnhint">Last Name</string>
+    <string name="text_newpin">Please Enter a New Pin</string>
+    <string name="arbtn_submit">Submit</string>
+
     <!--Login/Logout Text Resources -->
     <string name="button_logout">Logout</string>
     <string name="logoutbox_title">Confirmation PopUp!</string>
@@ -42,4 +61,36 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    
+    <!-- activity_admin -->
+    <string name="admin_headermessage">Welcome to the Admin Page</string>
+    <string name="aabtn_employeeSubmit">Submit Employee Info</string>
+    <string name="aabtn_adminCenter">Admin Center</string>
+    <string name="aabtn_adminSettings">Admin Profile</string>
+    <string name="aabtn_adminNotifications">Notification Center</string>
+
+    <!-- activity_admin_user -->
+    <string name="aautext_userlist">User List</string>
+
+    <!-- activity_regular_user -->
+    <string name="arutext_title">Employee Dashboard</string>
+    <string name="arutext_userpreferences">User Preferences</string>
+    <string name="arutext_holidaycenter">Holiday Center</string>
+    <string name="arutext_notificationcenter">Notification Center</string>
+
+    <!-- activity_user_details -->
+    <string name="aud_title">Hello</string>
+    <string name="aud_fnint">First Name</string>
+    <string name="aud_lnint">Last Name</string>
+    <string name="aud_unint">Username</string>
+    <string name="aud_pinint">PIN</string>
+    <string name="audbtn_photoTake">Take Photo</string>
+    <string name="audbtn_edit">Edit</string>
+    <string name="audbtn_resetPassword">Reset Password</string>
+    <string name="audbtn_backDash">Back to Dashboard</string>
+    <string name="audprof_profilephoto">Profile Photo</string>
+
+    <!-- header -->
+    <string name="header_title">Please Enter Login Details!</string>
+
 </resources>

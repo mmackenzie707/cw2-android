@@ -8,7 +8,7 @@
         android:id="@+id/adminMessage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Welcome to the Admin Page"
+        android:text="@string/admin_headermessage"
         android:textSize="24sp"
         android:textStyle="bold"
         android:visibility="visible"
@@ -32,43 +32,50 @@
         <Button
             android:id="@+id/buttonEmployeeSubmit"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Submit Employee Information"
-            android:padding="12dp"
-            android:background="@drawable/button_background"
-            android:textColor="@android:color/white"
-            android:layout_marginTop="16dp" />
+            android:layout_height="48dp"
+            android:layout_marginBottom="16dp"
+            android:text="@string/aabtn_employeeSubmit"
+            android:ellipsize="end"
+            android:singleLine="true"/>
 
         <Button
-            android:id="@+id/buttonAdmin"
+            android:id="@+id/adminbtn_holidayCenter"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
             android:layout_marginBottom="16dp"
-            android:text="Admin Center" />
+            android:text="@string/aabtn_adminCenter"
+            android:ellipsize="end"
+            android:singleLine="true" />
 
         <Button
-            android:id="@+id/adminbtn_adminsettings"
+            android:id="@+id/adminbtn_adminprofile"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
             android:layout_marginBottom="16dp"
-            android:text="Admin Settings" />
+            android:text="@string/aabtn_adminSettings"
+            android:ellipsize="end"
+            android:singleLine="true" />
 
         <Button
             android:id="@+id/adminbtn_notificationcenter"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
             android:layout_marginBottom="16dp"
-            android:text="Notification Center" />
+            android:text="@string/aabtn_adminNotifications"
+            android:ellipsize="end"
+            android:singleLine="true" />
 
         <Button
             android:id="@+id/logoutButton"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Logout" />
+            android:layout_height="48dp"
+            android:text="@string/button_logout"
+            android:ellipsize="end"
+            android:singleLine="true" />
     </LinearLayout>
 
     <ListView
-        android:id="@+id/employeeListView"
+        android:id="@+id/userListView"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:visibility="gone"

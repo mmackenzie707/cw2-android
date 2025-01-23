@@ -9,7 +9,7 @@
         android:id="@+id/editTextFirstName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="First Name"
+        android:hint="@string/text_fnhint"
         android:padding="12dp"
         android:background="@drawable/edit_text_background"
         android:layout_marginBottom="8dp" />
@@ -18,7 +18,7 @@
         android:id="@+id/editTextLastName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Last Name"
+        android:hint="@string/text_lnhint"
         android:padding="12dp"
         android:background="@drawable/edit_text_background"
         android:layout_marginBottom="16dp" />
@@ -28,7 +28,7 @@
         android:layout_height="wrap_content"
         android:paddingTop="16dp"
         android:paddingBottom="8dp"
-        android:text="Please enter a new pin"
+        android:text="@string/text_newpin"
         android:textSize="16sp" />
 
     <LinearLayout
@@ -85,7 +85,7 @@
         android:id="@+id/buttonSubmit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Submit"
+        android:text="@string/arbtn_submit"
         android:padding="12dp"
         android:background="@drawable/button_background"
         android:textColor="@android:color/white" />

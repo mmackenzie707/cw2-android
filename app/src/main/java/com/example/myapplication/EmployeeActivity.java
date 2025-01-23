@@ -24,7 +24,7 @@ public class EmployeeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_regular_user);
 
-        employeeListView = findViewById(R.id.employeeListView);
+        employeeListView = findViewById(R.id.userListView);
         employeeList = new ArrayList<>();
         employeeAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, employeeList);
         employeeListView.setAdapter(employeeAdapter);
