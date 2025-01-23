@@ -21,7 +21,9 @@ _Administrators_
    c) Notification Center - management of notifications
 
 _Test Administrator Credentials_
+
 Username: admin
+
 Password: 1234
 
 Coding Contributors
