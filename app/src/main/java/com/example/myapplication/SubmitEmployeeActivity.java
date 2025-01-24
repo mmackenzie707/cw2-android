@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -23,6 +24,7 @@ public class SubmitEmployeeActivity extends AppCompatActivity {
     private EditText editTextSurname;
     private EditText editTextForename;
     private Button buttonSubmit;
+    private Button buttonBackToDashboard;
     private static final String TAG = "SubmitEmployeeActivity";
 
     @Override
@@ -34,6 +36,7 @@ public class SubmitEmployeeActivity extends AppCompatActivity {
         editTextSurname = findViewById(R.id.editTextSurname);
         editTextForename = findViewById(R.id.editTextForename);
         buttonSubmit = findViewById(R.id.buttonEmployeeSubmit); // Ensure this ID matches the layout
+        buttonBackToDashboard = findViewById(R.id.buttonBackToDashboard); // Ensure this ID matches the layout
 
         if (buttonSubmit != null) {
             buttonSubmit.setOnClickListener(new View.OnClickListener() {
@@ -45,6 +48,18 @@ public class SubmitEmployeeActivity extends AppCompatActivity {
             });
         } else {
             Log.e(TAG, "Button is null");
+        }
+
+        if (buttonBackToDashboard != null) {
+            buttonBackToDashboard.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(SubmitEmployeeActivity.this, AdminActivity.class);
+                    startActivity(intent);
+                }
+            });
+        } else {
+            Log.e(TAG, "Back to Dashboard button is null");
         }
     }
 

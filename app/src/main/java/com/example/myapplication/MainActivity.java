@@ -10,8 +10,6 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-
 public class MainActivity extends AppCompatActivity {
 
     private Button[] pinPadButtons;
@@ -20,10 +18,6 @@ public class MainActivity extends AppCompatActivity {
     private int currentPinIndex = 0;
     private User currentUser;
     private UserWrapper currentUserWrapper;
-
-    private static final int NAV_HOME = R.id.navigation_home;
-    private static final int NAV_DASHBOARD = R.id.navigation_dashboard;
-    private static final int NAV_NOTIFICATIONS = R.id.navigation_settings;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,9 +50,6 @@ public class MainActivity extends AppCompatActivity {
 
         // Setup login button using LoginUtils
         LoginUtils.setupLoginButton(this, buttonLogin, editTextUser, pinDigit1, pinDigit2, pinDigit3, pinDigit4, currentUserWrapper);
-
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
-        NavigationUtils.setupBottomNavigationView(this, bottomNavigationView, currentUser);
 
         Button buttonRegister = findViewById(R.id.buttonRegister);
         buttonRegister.setOnClickListener(new View.OnClickListener() {
