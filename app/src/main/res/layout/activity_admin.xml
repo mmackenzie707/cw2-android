@@ -72,6 +72,14 @@
             android:text="@string/button_logout"
             android:ellipsize="end"
             android:singleLine="true" />
+
+        <Button
+            android:id="@+id/privacyPolicyButton"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="Privacy Policy" />
     </LinearLayout>
 
     <ListView

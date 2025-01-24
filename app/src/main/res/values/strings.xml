@@ -58,14 +58,14 @@
     <string name="logoutbox_alert1">You sure, that you want to logout?</string>
 
     <!-- Bottom Navigation -->
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="bntext_holiday">Holiday</string>
+    <string name="bntext_dashboard">Dashboard</string>
+    <string name="bntext_settings">Settings</string>
     
     <!-- activity_admin -->
     <string name="admin_headermessage">Welcome to the Admin Page</string>
     <string name="aabtn_employeeSubmit">Submit Employee Info</string>
-    <string name="aabtn_adminCenter">Admin Center</string>
+    <string name="aabtn_adminCenter">Holiday Center</string>
     <string name="aabtn_adminSettings">Admin Profile</string>
     <string name="aabtn_adminNotifications">Notification Center</string>
 
@@ -93,4 +93,14 @@
     <!-- header -->
     <string name="header_title">Please Enter Login Details!</string>
 
+    <!-- activity_holiday_requests -->
+    <string name="ahrtext_reason">Reason for Holiday</string>
+    <string name="ahrtext_startdate">Start Date</string>
+    <string name="ahrtext_enddate">End Date</string>
+    <string name="ahrtext_currentholiday">Current Holiday Requests</string>
+    <string name="ahrbtn_submit">Submit Request</string>
+
+    <!-- privacy_policy -->
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="privacy_main">Privacy Policy\n\nEffective Date: January 24th, 2025\n\n1. Introduction\n\nWelcome to Company Application. We are committed to protecting your personal information and your right to privacy. If you have any questions or concerns about this privacy notice or our practices with regard to your personal information, please contact us at Marketing Support marketing@thiscompany.com.\n\n2. Information We Collect\n\nWe collect personal information that you voluntarily provide to us when you register on the app, express an interest in obtaining information about us or our products and services, when you participate in activities on the app, or otherwise when you contact us.\n\n3. How We Use Your Information\n\nWe use personal information collected via our app for a variety of business purposes described below. We process your personal information for these purposes in reliance on our legitimate business interests, in order to enter into or perform a contract with you, with your consent, and/or for compliance with our legal obligations.\n\n4. Sharing Your Information\n\nWe only share information with your consent, to comply with laws, to provide you with services, to protect your rights, or to fulfill business obligations.\n\n5. Data Security\n\nWe have implemented appropriate technical and organizational security measures designed to protect the security of any personal information we process. However, please also remember that we cannot guarantee that the internet itself is 100% secure.\n\n6. Your Privacy Rights\n\nIn some regions, such as the European Economic Area (EEA), you have rights that allow you greater access to and control over your personal information. You may review, change, or terminate your account at any time.\n\n7. Changes to This Privacy Policy\n\nWe may update this privacy notice from time to time in order to reflect, for example, changes to our practices or for other operational, legal, or regulatory reasons.\n\n8. Contact Us\n\nIf you have questions or comments about this notice, you may email us at Marketing Support marketing@thiscompany.com or by post to:\n\nThis Company Ltd.\nCentral, Hong Kong</string>
 </resources>

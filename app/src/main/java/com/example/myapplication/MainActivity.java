@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
     private static final int NAV_HOME = R.id.navigation_home;
     private static final int NAV_DASHBOARD = R.id.navigation_dashboard;
-    private static final int NAV_NOTIFICATIONS = R.id.navigation_notifications;
+    private static final int NAV_NOTIFICATIONS = R.id.navigation_settings;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

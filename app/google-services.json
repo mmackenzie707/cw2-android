@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "190832921206",
+    "project_id": "cw2-android",
+    "storage_bucket": "cw2-android.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:190832921206:android:7344438d05bf7d41632d57",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCB3uD4NiIzDDmmsbSPb7n4Ayo0k8c9Nd4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,5 +1,6 @@
 [versions]
 agp = "8.7.3"
+firebaseBom = "33.8.0"
 junit = "4.13.2"
 junitVersion = "1.2.1"
 espressoCore = "3.6.1"
@@ -10,8 +11,11 @@ constraintlayout = "2.2.0"
 preference = "1.2.0"
 navigationFragment = "2.8.4"
 firebaseMessaging = "24.1.0"
+retrofit = "2.10.0"
 
 [libraries]
+converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofit" }
+firebase-bom = { module = "com.google.firebase:firebase-bom", version.ref = "firebaseBom" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
@@ -22,6 +26,7 @@ material = { group = "com.google.android.material", name = "material", version.r
 preference = { group = "androidx.preference", name = "preference", version.ref = "preference" }
 navigation-fragment = { group = "androidx.navigation", name = "navigation-fragment", version.ref = "navigationFragment" }
 firebase-messaging = { group = "com.google.firebase", name = "firebase-messaging", version.ref = "firebaseMessaging" }
+retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
 
 
 [plugins]

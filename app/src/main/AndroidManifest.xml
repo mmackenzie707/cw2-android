@@ -38,8 +38,10 @@
         <activity android:name=".RegularUserActivity" />
         <activity android:name=".AdminUsersPage" />
         <activity android:name=".EmployeeDashboardActivity" />
-        <activity android:name=".EmployeeActivity"/>
         <activity android:name=".AdminSettingsActivity"/>
+        <activity android:name=".HolidayRequestActivity" />
+        <activity android:name=".PrivacyPolicyActivity" />
+        v<activity android:name=".SubmitEmployeeActivity" />
 
         <service
             android:name=".MyFirebaseMessagingService"

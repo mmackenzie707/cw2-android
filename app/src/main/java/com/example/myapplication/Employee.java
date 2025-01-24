@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.myapplication.api;
 
 public class Employee {
     private String id;
@@ -12,6 +12,9 @@ public class Employee {
         this.name = name;
         this.position = position;
         this.department = department;
+    }
+
+    public Employee(int id, String surname, String forename) {
     }
 
     // Getters and setters

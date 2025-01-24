@@ -22,6 +22,8 @@ public class AdminActivity extends AppCompatActivity {
     ArrayAdapter<String> userAdapter;
     List<String> userList;
     Button userMaintenanceButton;
+    Button holidayCenterButton; // Holiday Center button
+    Button privacyPolicyButton; // Privacy Policy button
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -34,6 +36,8 @@ public class AdminActivity extends AppCompatActivity {
         Button logoutButton = findViewById(R.id.logoutButton);
         Button employeeSubmitButton = findViewById(R.id.buttonEmployeeSubmit);
         Button adminSettingsButton = findViewById(R.id.adminbtn_adminprofile);
+        holidayCenterButton = findViewById(R.id.adminbtn_holidayCenter); // Ensure this button is in your layout
+        privacyPolicyButton = findViewById(R.id.privacyPolicyButton); // Ensure this button is in your layout
 
         userMaintenanceButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,15 +67,31 @@ public class AdminActivity extends AppCompatActivity {
         employeeSubmitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(AdminActivity.this, EmployeeActivity.class);
+                Intent intent = new Intent(AdminActivity.this, SubmitEmployeeActivity.class);
                 startActivity(intent);
             }
         });
 
-        adminSettingsButton.setOnClickListener(new View.OnClickListener() { // New OnClickListener
+        adminSettingsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(AdminActivity.this, AdminSettingsActivity.class); // Assuming AdminSettingsActivity is your target activity
+                Intent intent = new Intent(AdminActivity.this, AdminSettingsActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        holidayCenterButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AdminActivity.this, HolidayRequestActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        privacyPolicyButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AdminActivity.this, PrivacyPolicyActivity.class);
                 startActivity(intent);
             }
         });
