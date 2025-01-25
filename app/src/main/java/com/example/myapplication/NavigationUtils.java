@@ -24,15 +24,19 @@ public class NavigationUtils {
                         Intent dashboardIntent = new Intent(activity, AdminActivity.class);
                         activity.startActivity(dashboardIntent);
                         return true;
-                    case R.id.navigation_home:
-                        // Navigate to Holiday Request Activity
-                        Intent holidayIntent = new Intent(activity, HolidayRequestActivity.class);
-                        activity.startActivity(holidayIntent);
-                        return true;
                     case R.id.navigation_settings:
                         // Navigate to User Profile
                         Intent settingsIntent = new Intent(activity, AdminSettingsActivity.class);
                         activity.startActivity(settingsIntent);
+                        return true;
+                    case R.id.navigation_logout:
+                        // Perform logout
+                        com.example.myapplication.utils.LogoutUtils.logout(activity);
+                        // Clear the activity stack and start the main activity
+                        Intent mainIntent = new Intent(activity, MainActivity.class);
+                        mainIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        activity.startActivity(mainIntent);
+                        activity.finish(); // Ensure the current activity is finished
                         return true;
                 }
                 return false;

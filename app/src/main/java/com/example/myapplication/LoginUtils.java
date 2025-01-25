@@ -7,7 +7,9 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class LoginUtils {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class LoginUtils extends AppCompatActivity {
 
     public static void setupLoginButton(Activity activity, View buttonLogin, EditText editTextUser, EditText pinDigit1, EditText pinDigit2, EditText pinDigit3, EditText pinDigit4, UserWrapper currentUserWrapper) {
         buttonLogin.setOnClickListener(new View.OnClickListener() {

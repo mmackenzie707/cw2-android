@@ -1,7 +1,10 @@
 package com.example.myapplication;
 
 import android.app.DatePickerDialog;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -13,11 +16,14 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.FirebaseApp;
 import com.google.firebase.messaging.FirebaseMessaging;
 import com.google.firebase.messaging.RemoteMessage;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.HashSet;
+import java.util.Set;
 
 public class HolidayRequestActivity extends AppCompatActivity {
 
@@ -30,10 +36,17 @@ public class HolidayRequestActivity extends AppCompatActivity {
     private ArrayList<String> holidayRequests;
     private ArrayAdapter<String> holidayRequestsAdapter;
 
+    private SharedPreferences sharedPreferences;
+    private static final String PREFS_NAME = "HolidayRequestsPrefs";
+    private static final String REQUESTS_KEY = "HolidayRequests";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_holiday_request);
+
+        // Initialize Firebase
+        FirebaseApp.initializeApp(this);
 
         holidayReasonEditText = findViewById(R.id.holidayReasonEditText);
         startDateEditText = findViewById(R.id.startDateEditText);
@@ -41,7 +54,8 @@ public class HolidayRequestActivity extends AppCompatActivity {
         submitHolidayRequestButton = findViewById(R.id.submitHolidayRequestButton);
         holidayRequestsListView = findViewById(R.id.holidayRequestsListView);
 
-        holidayRequests = new ArrayList<>();
+        sharedPreferences = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
+        holidayRequests = new ArrayList<>(sharedPreferences.getStringSet(REQUESTS_KEY, new HashSet<>()));
         holidayRequestsAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, holidayRequests);
         holidayRequestsListView.setAdapter(holidayRequestsAdapter);
 
@@ -74,6 +88,9 @@ public class HolidayRequestActivity extends AppCompatActivity {
                 String holidayRequest = "Reason: " + reason + "\nStart Date: " + startDate + "\nEnd Date: " + endDate;
                 holidayRequests.add(holidayRequest);
                 holidayRequestsAdapter.notifyDataSetChanged();
+
+                // Save to SharedPreferences
+                saveHolidayRequests();
 
                 // Clear the input fields
                 holidayReasonEditText.setText("");
@@ -113,15 +130,31 @@ public class HolidayRequestActivity extends AppCompatActivity {
     }
 
     private void sendPushNotification(String reason, String startDate, String endDate) {
-        FirebaseMessaging.getInstance().send(new RemoteMessage.Builder("your_server_key@fcm.googleapis.com")
-                .setMessageId(Integer.toString((int) System.currentTimeMillis()))
-                .addData("title", "New Holiday Request")
-                .addData("body", "Reason: " + reason + "\nStart Date: " + startDate + "\nEnd Date: " + endDate)
-                .build());
+        try {
+            FirebaseMessaging.getInstance().send(new RemoteMessage.Builder("your_server_key@fcm.googleapis.com")
+                    .setMessageId(Integer.toString((int) System.currentTimeMillis()))
+                    .addData("title", "New Holiday Request")
+                    .addData("body", "Reason: " + reason + "\nStart Date: " + startDate + "\nEnd Date: " + endDate)
+                    .build());
+        } catch (Exception e) {
+            Log.e("HolidayRequestActivity", "Error sending push notification", e);
+        }
     }
 
     private User getCurrentUser() {
         UserSessionManager sessionManager = new UserSessionManager(this);
         return sessionManager.getCurrentUser();
+    }
+
+    private void saveHolidayRequests() {
+        try {
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            Set<String> set = new HashSet<>(holidayRequests);
+            editor.putStringSet(REQUESTS_KEY, set);
+            editor.apply();
+            Log.d("HolidayRequestActivity", "Holiday requests saved: " + set);
+        } catch (Exception e) {
+            Log.e("HolidayRequestActivity", "Error saving holiday requests", e);
+        }
     }
 }

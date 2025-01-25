@@ -57,23 +57,6 @@
             android:singleLine="true" />
 
         <Button
-            android:id="@+id/adminbtn_notificationcenter"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_marginBottom="16dp"
-            android:text="@string/aabtn_adminNotifications"
-            android:ellipsize="end"
-            android:singleLine="true" />
-
-        <Button
-            android:id="@+id/logoutButton"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:text="@string/button_logout"
-            android:ellipsize="end"
-            android:singleLine="true" />
-
-        <Button
             android:id="@+id/privacyPolicyButton"
             android:layout_width="match_parent"
             android:layout_height="48dp"

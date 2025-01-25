@@ -1,8 +1,11 @@
-package com.example.myapplication;
+package com.example.myapplication.utils;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.widget.Toast;
+
+import com.example.myapplication.LoginUtils;
+import com.example.myapplication.UserSessionManager;
 
 public class LogoutUtils {
 

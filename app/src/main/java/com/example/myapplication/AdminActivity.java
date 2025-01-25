@@ -60,7 +60,7 @@ public class AdminActivity extends AppCompatActivity {
         logoutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                LogoutUtils.logout(AdminActivity.this);
+                com.example.myapplication.utils.LogoutUtils.logout(AdminActivity.this);
             }
         });
 
