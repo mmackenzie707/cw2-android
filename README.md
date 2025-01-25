@@ -15,23 +15,40 @@ _Administrators_
 _Administrator Dashboard_
 
 1. Submit EMployee Details
-     a) This button is connected to a layout page called activity_submit_employee;
-     b) When you submit information on this page it uses the POST method in a RESTful API to submit data to https://web.socem.plymouth.ac.uk/COMP2000/api/.
+
+   a) This button is connected to a layout page called activity_submit_employee;
+
+   b) When you submit information on this page it uses the POST method in a RESTful API to submit data to https://web.socem.plymouth.ac.uk/COMP2000/api/.
+
 2. Holiday Center
-     a) This button is connected to layout page activity_holiday_request;
-     b) This page uses a simple text field for reason and two (2) date pickers for start and end date to request vacation time;
-     c) There is also a stored function that will show you the requested date below the input information, this data will be erased after logout
+
+   a) This button is connected to layout page activity_holiday_request;
+
+   b) This page uses a simple text field for reason and two (2) date pickers for start and end date to request vacation time;
+
+   c) There is also a stored function that will show you the requested date below the input information, this data will be erased after logout
+
 3. Admin Profile
-     a) This button leads to layout activity_user_details;
-     b) You can find all user information in this page; Profile Picture, First name, Last Name, Username and Pin
-     c) The following items are editable; First Name and Last Name
-     d) You can reseet your PIN using the reset password button
-     e) Username is autopopulated based on the logged in user
-     f) Back to Dashboard takes you back to the main menu
+
+   a) This button leads to layout activity_user_details;
+
+   b) You can find all user information in this page; Profile Picture, First name, Last Name, Username and Pin
+
+   c) The following items are editable; First Name and Last Name
+
+   d) You can reseet your PIN using the reset password button
+
+   e) Username is autopopulated based on the logged in user
+
+   f) Back to Dashboard takes you back to the main menu
+
 4. Logout
-     a) Logout calls upon the logout method to logout the currently logged in user
+
+   a) Logout calls upon the logout method to logout the currently logged in user
+
 5. Privacy Policy
-     a) This is linked to layout file activity_privacy_policy and shows the current privacy policy of the application
+
+   a) This is linked to layout file activity_privacy_policy and shows the current privacy policy of the application
 
 
 
