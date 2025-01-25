@@ -1,6 +1,6 @@
 # cw2-android
 
-This program handles Employee and Administrator data, splitting the two responsibilities using a UserFactory.java class after the initial registration. When an employee initially regissters, they will be automatically placed in the employee bin, only then can the administrator grant administrative permissions to the user.
+This is a program that focuses on Administrative tasks which include but limited to; Sumbitting Employee Data to a Web Service via RESTful Api, Holiday Requests, User Profile updating and others.
 
 How to Use:
 
