@@ -57,12 +57,12 @@
             android:singleLine="true" />
 
         <Button
-            android:id="@+id/privacyPolicyButton"
+            android:id="@+id/adminbtn_privacyPolicy"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:ellipsize="end"
             android:singleLine="true"
-            android:text="Privacy Policy" />
+            android:text="@string/privacy_main" />
     </LinearLayout>
 
     <ListView

@@ -58,7 +58,7 @@
     <string name="logoutbox_alert1">You sure, that you want to logout?</string>
 
     <!-- Bottom Navigation -->
-    <string name="bntext_holiday">Holiday</string>
+    <string name="bntex_logout">logout</string>
     <string name="bntext_dashboard">Dashboard</string>
     <string name="bntext_settings">Settings</string>
     
@@ -68,6 +68,7 @@
     <string name="aabtn_adminCenter">Holiday Center</string>
     <string name="aabtn_adminSettings">Admin Profile</string>
     <string name="aabtn_adminNotifications">Notification Center</string>
+    <string name="aabtn_adminPrivacy">Privacy Policy</string>
 
     <!-- activity_admin_user -->
     <string name="aautext_userlist">User List</string>

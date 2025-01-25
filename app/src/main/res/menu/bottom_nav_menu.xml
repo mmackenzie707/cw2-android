@@ -2,13 +2,13 @@
     <item
         android:id="@+id/navigation_dashboard"
         android:icon="@drawable/ic_dashboard"
-        android:title="Dashboard" />
+        android:title="@string/bntext_dashboard" />
     <item
         android:id="@+id/navigation_settings"
         android:icon="@drawable/ic_settings"
-        android:title="Settings" />
+        android:title="@string/bntext_settings" />
     <item
         android:id="@+id/navigation_logout"
-        android:icon="@drawable/ic_logout"
-        android:title="Logout" />
+        android:icon="@drawable/logout"
+        android:title="@string/bntex_logout" />
 </menu>
