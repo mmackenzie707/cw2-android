@@ -36,7 +36,7 @@ public class NavigationUtils {
                         Intent mainIntent = new Intent(activity, MainActivity.class);
                         mainIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                         activity.startActivity(mainIntent);
-                        activity.finish(); // Ensure the current activity is finished
+                        activity.finish();
                         return true;
                 }
                 return false;
@@ -45,7 +45,6 @@ public class NavigationUtils {
     }
 
     private static void initializeBottomNavigationView(Activity activity, BottomNavigationView bottomNavigationView, User currentUser) {
-        // Set the default selected item
         bottomNavigationView.setSelectedItemId(R.id.navigation_dashboard);
     }
 }

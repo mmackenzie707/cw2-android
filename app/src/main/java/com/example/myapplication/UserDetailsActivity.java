@@ -37,7 +37,7 @@ public class UserDetailsActivity extends AppCompatActivity {
         buttonResetPassword = findViewById(R.id.buttonResetPassword);
         buttonBack = findViewById(R.id.buttonBack);
 
-        // Assuming you have a way to get the logged-in user
+
         loggedInUser = UserStorage.getInstance().getUser("loggedInUsername"); // Replace with actual logic
 
         if (loggedInUser != null) {
@@ -61,16 +61,13 @@ public class UserDetailsActivity extends AppCompatActivity {
             buttonEdit.setText(isEditable ? "Edit" : "Save");
 
             if (isEditable) {
-                // Save the changes
                 loggedInUser.setFirstName(firstNameEditText.getText().toString());
                 loggedInUser.setLastName(lastNameEditText.getText().toString());
-                // Update the user in storage
                 UserStorage.getInstance().updateUser(loggedInUser);
             }
         });
 
         buttonResetPassword.setOnClickListener(v -> {
-            // Implement password reset logic here
         });
 
         buttonBack.setOnClickListener(v -> {

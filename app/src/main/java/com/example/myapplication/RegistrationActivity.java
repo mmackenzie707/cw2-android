@@ -21,6 +21,7 @@ public class RegistrationActivity extends AppCompatActivity {
     StringBuilder pinBuilder = new StringBuilder();
     int currentPinIndex = 0;
 
+    //Initialization of Fields
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +40,7 @@ public class RegistrationActivity extends AppCompatActivity {
 
         setupKeypad();
 
+        //First Name Text Action
         firstName.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
@@ -52,6 +54,7 @@ public class RegistrationActivity extends AppCompatActivity {
             public void afterTextChanged(Editable s) {}
         });
 
+        //Last Name Text Action
         lastName.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
@@ -65,6 +68,7 @@ public class RegistrationActivity extends AppCompatActivity {
             public void afterTextChanged(Editable s) {}
         });
 
+        //Submit Button Action
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -98,6 +102,7 @@ public class RegistrationActivity extends AppCompatActivity {
         });
     }
 
+    //Keypad Input Block
     private void setupKeypad() {
         int[] buttonIds = {
                 R.id.button0, R.id.button1, R.id.button2, R.id.button3,
@@ -131,6 +136,7 @@ public class RegistrationActivity extends AppCompatActivity {
         }
     }
 
+    //Updating the Username
     private void updateUsername() {
         String firstNameInput = firstName.getText().toString().trim();
         String lastNameInput = lastName.getText().toString().trim();

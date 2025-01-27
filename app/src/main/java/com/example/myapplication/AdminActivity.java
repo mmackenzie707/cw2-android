@@ -25,6 +25,7 @@ public class AdminActivity extends AppCompatActivity {
         adminbtn_privacyPolicy = findViewById(R.id.adminbtn_privacyPolicy);
         bottomNavigationView = findViewById(R.id.bottom_navigation);
 
+        //Employee Submit Data Button Action
         buttonEmployeeSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -33,6 +34,7 @@ public class AdminActivity extends AppCompatActivity {
             }
         });
 
+        //Holiday Center Button Action
         adminbtn_holidayCenter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -41,6 +43,7 @@ public class AdminActivity extends AppCompatActivity {
             }
         });
 
+        //Admin Profile Button Action
         adminbtn_adminprofile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -57,6 +60,7 @@ public class AdminActivity extends AppCompatActivity {
             }
         });
 
+        //Bottom Navigation Method
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {

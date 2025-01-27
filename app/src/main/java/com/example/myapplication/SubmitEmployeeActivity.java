@@ -30,13 +30,13 @@ public class SubmitEmployeeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_submit_employee); // Ensure this layout file is correct
+        setContentView(R.layout.activity_submit_employee);
 
         editTextId = findViewById(R.id.editTextId);
         editTextSurname = findViewById(R.id.editTextSurname);
         editTextForename = findViewById(R.id.editTextForename);
-        buttonSubmit = findViewById(R.id.buttonEmployeeSubmit); // Ensure this ID matches the layout
-        buttonBackToDashboard = findViewById(R.id.buttonBackToDashboard); // Ensure this ID matches the layout
+        buttonSubmit = findViewById(R.id.buttonEmployeeSubmit);
+        buttonBackToDashboard = findViewById(R.id.buttonBackToDashboard);
 
         if (buttonSubmit != null) {
             buttonSubmit.setOnClickListener(new View.OnClickListener() {

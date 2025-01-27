@@ -26,8 +26,8 @@ public class User {
 
     public <T> User(String username, List<T> list) {
         this.username = username;
-        this.pin = null; // Assuming pin is not provided in this constructor
-        this.roles = Collections.singletonList("USER"); // Default role
+        this.pin = null;
+        this.roles = Collections.singletonList("USER");
     }
 
     public User(String username, String pin, boolean b) {

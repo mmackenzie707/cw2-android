@@ -6,6 +6,7 @@ import java.net.URL;
 
 public class ApiUtils {
 
+    //Api Method Initialization
     public static void sendDataToApi(String apiUrl, String jsonData) {
         HttpURLConnection urlConnection = null;
         try {
